@@ -1,0 +1,16 @@
+.canvas{
+    background-color: rgb(213, 213, 213);
+    width: 86%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.calculator_div{
+    background-color: #ffffff;
+    width: 56%;
+    height: 70%;
+    border-radius: 15px;
+    border-bottom-right-radius: 150px;
+}
