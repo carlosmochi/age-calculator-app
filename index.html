@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="./CSS/index.css">
+  <link rel="stylesheet" type="text/css" href="./CSS/media-querries.css">
   <script src="./JS/index.js" type="module"></script>  
   <title>Frontend Mentor | Age calculator app</title>
 
@@ -16,27 +17,47 @@
   </style>
 </head>
 <body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
   <div class="canvas">
     <div class="calculator_div">
-
+      <form class="calculator_form">
+        <div class="input_div">
+          <div class="input_form_div">
+            <label>DAY</label>
+            <input class="date_input" name="day" id="day" type="number" placeholder="DD" required>
+            <label class="day_label error_label error"></label>
+          </div>
+          <div class="input_form_div">
+            <label>MONTH</label>
+            <input class="date_input" name="month" id="month" type="number" placeholder="MM" required>
+            <label class="month_label error_label error"></label>
+          </div>
+          <div class="input_form_div">
+            <label>YEAR</label>
+            <input class="date_input" name="year" id="year" type="number" placeholder="YYYY" required>
+            <label class="year_label error_label error"></label>
+          </div>
+        </div>
+        <div class="calculator_result_divider_div">
+          <hr class="solid">
+          <button class="calculate_button" onclick="calculate.calculateAge()"><img class="calculate_arrow" src="./assets/images/icon-arrow.svg"></button>
+        </div>
+      </form>
+      <div class="result_div">
+        <div class="result_text_div">
+          <a id="result_year">--</a><a> years</a><br>
+        </div>
+        <div class="result_text_div">
+          <a id="result_month">--</a><a> months</a><br>
+        </div>
+        <div class="result_text_div">
+          <a id="result_day">--</a><a> days</a><br>
+        </div>
+      </div>
     </div>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Carlos Antonio Oliveira Mochi</a>.
   </div>
 </body>
 </html>

@@ -1,0 +1,43 @@
+@media screen and (max-width: 375px){
+    body{
+        margin: 0;
+    }
+
+    .canvas {
+        width: 100%;
+        height: 97vh;
+    }
+    .calculator_div{
+        width: 95%;
+    }
+    .input_div{
+        padding: 20px;
+    }
+    .date_input{
+        width: 73px;
+        height: 50px;
+        font-size: 20px;
+        padding-left: 10px;
+        margin-bottom: 50px;
+    }
+    .calculate_button{
+        position: absolute;
+        left: 40%;
+        height: 60px;
+        width: 60px;
+    }
+    .calculate_arrow{
+        width: 25px;
+    }
+    .calculator_result_divider_div{
+        height: 30px;
+    }
+    .result_div{
+        padding-left: 20px;
+        padding-bottom: 0;
+    }
+    .result_text_div{
+        font-size: 50px;
+        height: 60px;
+    }
+}
