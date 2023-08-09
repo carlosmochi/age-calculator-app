@@ -48,7 +48,14 @@ const calculate = {
             document.getElementById("year").classList.add("error_border");
             document.getElementsByClassName("input_form_div")[2].classList.add("error");
             isValidDate = false;
-
+        }else if(new Date(month.value+"/"+day.value+"/"+year.value) > currentDate){
+            document.getElementsByClassName("year_label")[0].innerHTML = "Must be in the past";
+            document.getElementById("day").classList.add("error_border");
+            document.getElementById("month").classList.add("error_border");
+            document.getElementById("year").classList.add("error_border");
+            document.getElementsByClassName("input_form_div")[0].classList.add("error");
+            document.getElementsByClassName("input_form_div")[1].classList.add("error");
+            document.getElementsByClassName("input_form_div")[2].classList.add("error");
         }
         
         if(!this.checkValidDate(day.value, month.value, year.value)){
@@ -67,7 +74,8 @@ const calculate = {
             var age = currentDate - birthdate;
             age = parseInt((age/1000)/86400)
 
-            const years = parseInt(age/365);
+            let years = 0;
+            years = parseInt(age/365);
             age = age % 365;
 
             console.log(age);
@@ -84,10 +92,10 @@ const calculate = {
                     lessThanMonth = true;
                 }
             }
-            document.getElementById("result_year").innerHTML = years;
-            document.getElementById("result_month").innerHTML = months;
-            document.getElementById("result_day").innerHTML = age;
             
+            this.animateAge(document.getElementById("result_day"), age)
+            this.animateAge(document.getElementById("result_month"), months)
+            this.animateAge(document.getElementById("result_year"), years)
         }
     },
 
@@ -100,6 +108,25 @@ const calculate = {
             return false;
         }
         return true;
+    },
+
+    animateAge: function(object, end){
+        object.innerHTML = 0;
+        var done = false;
+        var currentValue = object.innerHTML;
+
+        const step = () => {
+            if(currentValue != end){
+                currentValue++;
+            }else{
+                done = true;
+            }
+            object.innerHTML = currentValue;
+            if(!done){
+                window.requestAnimationFrame(step);
+            }
+        }
+        window.requestAnimationFrame(step);
     }
 }
 
